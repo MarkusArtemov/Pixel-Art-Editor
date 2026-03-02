@@ -1,29 +1,59 @@
 # Pixel Art Editor
 
-Ein 2D-Sprite-Editing-Tool, das die Erstellung von Sprites und deren Zusammensetzung in Karten ermöglicht. Es vereint den SpriteEditor zur Animationserstellung und den MapEditor zur Level- und Szenengestaltung für 2D-Spiele in einer integrierten Umgebung.
+Webbasierter 2D-Sprite- und Tilemap-Editor, entwickelt im Rahmen eines Hochschulprojekts (WS 2024/25, Hochschule Flensburg).  
+Umgesetzt als Single-Page-Application ohne Einsatz eines Frontend-Frameworks.
 
-## Voraussetzungen
 
-- Node.js
-- Live Server Erweiterung (z.B. für Visual Studio Code)
+## Funktionen
 
-## Backend starten
+### SpriteEditor
 
-1. Gehen Sie in das Stammverzeichnis des Projekts.
+- Pixelbasiertes Zeichnen mit der HTML5 Canvas API  
+- Mehrere Frames zur Animationserstellung  
+- Onion-Skin-Unterstützung  
+- Selektions- und Shape-Tools  
+- Spiegeln von Zeichenoperationen  
+- Bresenham-Algorithmus für lückenfreie Linien  
+- Zoom und resizable Canvas  
 
-2. Führen Sie den folgenden Befehl in der Konsole aus, um den Backend-Server zu starten:
+### MapEditor
 
-   ```bash
-   node backend/server.js
-   ```
+- Tile-basierte Kartenstruktur  
+- Layer-Management (Reihenfolge, Sichtbarkeit, Entfernen)  
+- Selection- und Shape-Tools  
+- Karten-Vorschau  
 
-## Frontend starten
+### FileArea
 
-1. Starten Sie die Anwendung, indem Sie **Live Server** in Ihrem VS Code starten.
+- Ordnerbasierte Projektstruktur  
+- CRUD-Funktionalität für Sprite- und Map-Dateien  
+- Drag-and-Drop-Organisation  
 
-2. Öffnen Sie im Browser das Hauptverzeichnis unter dem Pfad: `frontend/EditorTool`.
 
-Falls sich der Browser nicht automatisch öffnet, navigieren Sie manuell zu:
-`http://localhost:{LiveServer-Port}/frontend/EditorTool/`, wobei `{LiveServer-Port}` der von Live Server verwendete Port ist.
+## Architektur
 
-Hinweis: Achten Sie darauf, dass Frontend und Server nicht auf demselben Port gestartet werden, um Portkonflikte zu vermeiden.
+Frontend (Vanilla JavaScript, CustomElements, Canvas API)  
+⇄ REST (HTTP/JSON)  
+Backend (Node.js, Express, Sequelize ORM, SQLite)
+
+
+## Setup
+
+**Voraussetzung:** Node.js 18+
+
+```bash
+cd backend
+npm install
+node server.js
+```
+
+Das Frontend aus `frontend/EditorTool` mit einem lokalen Entwicklungsserver starten.  
+Frontend und Backend müssen auf unterschiedlichen Ports laufen.
+
+---
+
+## Autoren
+
+- Markus Artemov  
+- Matz Schultz  
+- Onur Ulusoy  
